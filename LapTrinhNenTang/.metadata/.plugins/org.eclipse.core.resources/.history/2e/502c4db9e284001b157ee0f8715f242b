@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+
+public class XuLy {
+
+	public XuLy() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static int tinhTien(int quangDuongDauTien, int giaTienDauTien, int quangDuongThem, int giaTienThem,
+			int tongDuongDi) {
+		int tongTien = 0;
+		if (tongDuongDi < quangDuongDauTien) {
+			tongTien = giaTienDauTien;
+		} else {
+			tongTien = giaTienDauTien + ((tongDuongDi - quangDuongDauTien) / quangDuongThem + 1) * giaTienThem;
+		}
+		return tongTien;
+	}
+
+	public static void main(String[] args) {
+		int tongTien = 0;
+		int tongTienMax = 0;
+		int tongTienMin = 0;
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		int N = scan.nextInt();
+		int tongDuongDi = scan.nextInt();
+		if (N >= 0 && N <= 10) {
+			for (int i = 0; i < N; i++) {
+				int quangDuongDauTien = scan.nextInt();
+				int giaTienDauTien = scan.nextInt();
+				int quangDuongThem = scan.nextInt();
+				int giaTienThem = scan.nextInt();
+				if(i == 0) {
+					tongTienMin = tongTien;
+					tongTienMax = tongTien;
+				}
+				tongTien = tinhTien(quangDuongDauTien, giaTienDauTien, quangDuongThem, giaTienThem, tongDuongDi);
+				
+//				System.out.println(tongTien);
+				if(tongTien <= tongTienMin) {
+					tongTienMin = tongTien;
+				}else {
+					tongTienMax = tongTien;
+				}
+				System.out.println(tongTienMin);
+				System.out.println(tongTienMax);
+			}
+		}
+	}
+}

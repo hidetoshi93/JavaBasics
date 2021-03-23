@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class XuLy {
+
+	public XuLy() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		DanhSachChuyenXe dsChuyenXe = new DanhSachChuyenXe();
+		dsChuyenXe.nhap(scan);
+		dsChuyenXe.xuat();
+	}
+}

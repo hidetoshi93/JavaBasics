@@ -1,0 +1,23 @@
+
+public class XuLy {
+
+	public XuLy() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SinhVien sv1 = new SinhVien();
+		SinhVien sv2 = new SinhVien();
+		
+		sv1.hoTen = "Tuan";
+		sv1.email = "tuanphung@gmail.com";
+		
+		sv2.hoTen = "Mai";
+		sv2.email = "maiphung@gmail.com";
+		
+		System.out.println("ten: " + sv1.hoTen + "emai: "+ sv1.email);
+		System.out.println("ten: " + sv2.hoTen + "emai: "+ sv2.email);
+	}
+
+}
