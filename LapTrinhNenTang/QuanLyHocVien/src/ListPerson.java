@@ -5,6 +5,7 @@
  * バージョン： v.01
  */
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 
@@ -72,6 +73,51 @@ public class ListPerson {
 		}
 	}
 	//5. Business methods
+	public void dummyData() {
+		Person person;
+		person = new Student("Hidetoshi", "Fukui", "01", "Hidetoshi@gmail.com", 8, 9, 10);
+		this.listPerson.add(person);
+		
+		person = new Student("Hanako", "Sakai", "02", "Hanako@gmail.com", 8, 9, 10);
+		this.listPerson.add(person);
+		
+		person = new Student("Maiko", "Maruoka", "03", "Maiko@gmail.com", 8, 9, 10);
+		this.listPerson.add(person);
+		
+		person = new Employee("Fujitora", "Onepiece", "04", "Fujitora@gmail.com", 15, 20);
+		this.listPerson.add(person);
+		
+		person = new Employee("Akainu", "Onepice", "05", "Akainu@gmail.com", 15, 20);
+		this.listPerson.add(person);
+		
+		person = new Employee("Aokiji", "Onepice", "06", "Aokiji@gmail.com", 15, 20);
+		this.listPerson.add(person);
+		
+		person = new Customer("Luffy", "EastBlue", "07", "Luffy@onepiece.com", "D族", 20, "Good");
+		this.listPerson.add(person);
+		
+		person = new Customer("Garp", "EastBlue", "08", "Garp@onepiece.com", "D族", 20, "VeryGood");
+		this.listPerson.add(person);
+		
+	}
+	
+	private void interchangeSort(ArrayList<Person> _list) {
+		int i;
+		int j;
+		for(i = 0; i < _list.size()-1; i++) {
+			for(j = i+1; j < _list.size()-1; j++) {
+				Person personI = _list.get(i);
+				Person personJ = _list.get(j);
+				if(personJ.getName().compareToIgnoreCase(personI.getName()) < 0) {
+					Collections.swap(_list, i, j);
+				}
+			}
+		}
+	}
+	
+	public void sortName() {
+		interchangeSort(this.listPerson);
+	}
 	
 
 }

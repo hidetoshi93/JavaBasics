@@ -24,6 +24,7 @@ public class XuLy {
 	private static void doMenu(Scanner scan) {
 		boolean flag = true;
 		ListPerson objListPerson = new ListPerson();
+		objListPerson.dummyData();
 		do {
 			printMenu();
 			int selected = Integer.parseInt(scan.nextLine());
@@ -36,6 +37,7 @@ public class XuLy {
 			case 3:
 				break;
 			case 4:
+				objListPerson.sortName();
 				objListPerson.output();
 				break;
 			case 0:
